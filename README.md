@@ -42,3 +42,7 @@ To register your application and add the app's registration information to your 
 4. Open the Package Manager Console (View -> Other Windows -> Package Manager Console) and run Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
 5. Edit Web.config and fill in the values for ClientId, Tenant, AppSecret with the values from steps 7 and 8 from Registering your Application
 6. Replace the value of ResourceUri with the URL to your own Dynamics CRM
+
+### Run the project
+1. Run the project and navigate to https://localhost:44301/ in an incognito browser
+2. This should pop up a page with a sign in button.
