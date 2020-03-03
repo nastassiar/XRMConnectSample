@@ -1,8 +1,12 @@
 # XRMConnectSample
+
+*NOTE: This is just a sample and is not being actively maintained and should not be considered production ready code*
+
+Sample using OpenID connect sample and the XRM tooling library to connect to Dynamics365. 
  
- Sample using OpenID connect sample and the XRM tooling library to connect to Dynamics365. 
- 
- Built upon an [ASP.NET AAD Sample](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-webapp).
+Built upon an [ASP.NET AAD Sample](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-v2-aspnet-webapp) and using the [OAuth behalf of flow to connect](https://docs.microsoft.com/en-us/azure/active-directory/develop/v2-oauth2-on-behalf-of-flow) to the [Common Data Service](https://docs.microsoft.com/en-us/powerapps/maker/common-data-service/data-platform-intro).
+
+In this sample a user will login to Azure Active Directory, within the code there will then be another call out to AAD to get a token for Dynamics/CDS. See Utils/OnBehalfAuthManager.cs for more details. 
  
  ## To Run
  
@@ -40,9 +44,10 @@ To register your application and add the app's registration information to your 
 2. Open the solution in Visual Studio (OpenIdConnect-XRMTooling-Sample.sln)
 3. Depending on the version of Visual Studio, you might need to right click on the project OpenIdConnect-XRMTooling-Sample and Restore NuGet packages
 4. Open the Package Manager Console (View -> Other Windows -> Package Manager Console) and run Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r
-5. Edit Web.config and fill in the values for ClientId, Tenant, AppSecret with the values from steps 7 and 8 from Registering your Application
-6. Replace the value of ResourceUri with the URL to your own Dynamics CRM
+5. Edit Web.config and fill in the values for *ClientId*, *Tenant*, *AppSecret* with the values from steps 7 and 8 from Registering your Application
+6. Replace the value of *ResourceUri* with the URL to your own Dynamics CRM
 
 ### Run the project
 1. Run the project and navigate to https://localhost:44301/ in an incognito browser
 2. This should pop up a page with a sign in button.
+3. Sign in as a user that is within your AAD tenant
